@@ -68,3 +68,7 @@ export class appcomponent{
  {{name}}
  
  ```
+# Add with nevigation with routing
+```
+ <a routerLink="/contect" routerLinkActive="active">Contect</a> 
+ ```
