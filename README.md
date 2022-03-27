@@ -47,8 +47,30 @@ onsave(){ alert("yes");}
 # two-way binding
  import Forms module in app.module.ts file.
  
+ # all component call in declarations
+  
+``` 
+
+   declarations:[
+               AppComponent,
+               
+               ContactComponent,
+               
+               AboutComponent,
+               
+               ShopComponent,
+               
+               NavComponent,  
+  ]
+ ```
 ```
 import {FormsModule} from '@angular/forms';
+
+all module call in imports[]
+
+imports:[
+         FormsModule
+      ]
 ```
 
 ```
