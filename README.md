@@ -94,3 +94,79 @@ export class appcomponent{
 ```
  <a routerLink="/contect" routerLinkActive="active">Contect</a> 
  ```
+ 
+ # sturcture directives
+ ***ng if*** 
+ 
+***ng if-else***
+
+***ng for***
+
+# ng if
+
+***ng if used for hide show in html***
+
+```
+component.html file
+
+<p *ngIf="name" >this is coming from contact page!</p>
+
+<button (click)="showHide()" >Toggle</button>
+
+
+component.ts file
+
+ constructor() { 
+  
+  name = false;
+  
+    showHide(){
+
+    if(this.name == true)
+    {
+      this.name = false;
+    }else{
+      this.name = true;
+    }
+
+}
+
+```
+
+# ng for
+***component.html file***
+
+```
+<div *ngFor="let name of data" >
+    <P>{{name}}</P>
+</div>
+<input type="text" [(ngModel)]="stuName" >
+
+<button (click)="addName()" >Add name</button>
+<button (click)="rName()" >Remove name</button>
+
+```
+
+***component.ts file***
+
+```
+addName(){
+    
+    this.data.push(this.stuName)
+    this.stuName="";
+  
+  }
+  
+  rName(){
+    //this.data.pop(this.stuName)
+        var index = this.data.indexOf(this.stuName);
+      if (index !== -1) {
+        this.data.splice(index, 1);
+      }
+  }
+```
+
+
+
+
+
