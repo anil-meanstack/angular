@@ -106,16 +106,20 @@ export class appcomponent{
 
 ***ng if used for hide show in html***
 
+***component.html file***
+
+
 ```
-component.html file
 
 <p *ngIf="name" >this is coming from contact page!</p>
 
 <button (click)="showHide()" >Toggle</button>
 
+```
 
-component.ts file
+***component.ts file***
 
+```
  constructor() { 
   
   name = false;
@@ -165,6 +169,53 @@ addName(){
       }
   }
 ```
+
+# Reactive Forms
+
+***component.html file***
+
+```
+<form [formGroup]="data" (ngSubmit)="datafunctuion()">
+   Name: <input type="name"  formControlName="name" /><br><br>
+   Lastname:<input type="lastname"  formControlName="lastname"/><br><br>
+   E-mail: <input type="email"  formControlName="email"/><br><br>
+           <button type="submit" name="submit">submit</button>
+</form>
+
+```
+
+***component.ts file ***
+
+```
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormControlName, FormGroup } from '@angular/forms';
+@Component({
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
+})
+export class FormComponent implements OnInit {
+
+  constructor() { }
+  data !: FormGroup;
+
+  ngOnInit(): void {
+    
+    this.data = new FormGroup({
+      name: new FormControl(''),
+      lastname: new FormControl(''),   
+      email : new FormControl('')
+    });
+  }
+
+
+datafunctuion(){
+  console.log(this.data.value);
+}
+}
+
+```
+
 
 
 
