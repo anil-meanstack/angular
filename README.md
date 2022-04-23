@@ -209,7 +209,7 @@ export class AppModule { }
 
 ```
 
-***component.ts file ***
+***component.ts file***
 
 ```
 import { Component, OnInit } from '@angular/core';
