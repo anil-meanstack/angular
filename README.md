@@ -176,7 +176,7 @@ addName(){
 
 ```
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';  //call this
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -189,7 +189,7 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule //call this
   ],
   providers: [],
   bootstrap: [AppComponent]
