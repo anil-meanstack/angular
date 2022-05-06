@@ -202,6 +202,10 @@ export class AppModule { }
 ```
 <form [formGroup]="data" (ngSubmit)="datafunctuion()">
    Name: <input type="name"  formControlName="name" /><br><br>
+     <div *ngIf="input['email'].touched && input['email'].invalid">
+      <div *ngIf="input['email']?.errors?.['required']">Email is required<div>   =====> validators
+     </div>
+     
    Lastname:<input type="lastname"  formControlName="lastname"/><br><br>
    E-mail: <input type="email"  formControlName="email"/><br><br>
            <button type="submit" name="submit">submit</button>
@@ -227,15 +231,21 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     
     this.data = new FormGroup({
-      name: new FormControl(''),
-      lastname: new FormControl(''),   
-      email : new FormControl('')
+      name: new FormControl('',[Validators.required,Validators.minLength(4)]),,
+      lastname: new FormControl('',[Validators.required,Validators.minLength(4)]),,   ====> validators
+      email : new FormControl('',[Validators.required,Validators.minLength(4)]),
     });
+  }
+   ===>validators function<===
+    get input(): { [key: string]: AbstractControl } {
+    return this.data.controls;
   }
 
 
 datafunctuion(){
   console.log(this.data.value);
+   //rederct to value dashboad 
+  this._router.navigateByUrl('/dashboad');
 }
 }
 
