@@ -213,7 +213,7 @@ export class AppModule { }
 
 ```
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormControlName, FormGroup } from '@angular/forms';  --=================================================> add this
+import { FormControl, FormControlName, FormGroup } from '@angular/forms';  =============================================> add this
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
