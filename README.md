@@ -317,6 +317,22 @@ import { HttpClient } from '@angular/common/http';
 
 constructor(private http:HttpClient) { }
 
+get(){
+    return this.http.get("http://jsonplaceholder.typicode.com/users")
+  }
+
+```
+
+***component.ts file***
+```
+data!:FormGroup;
+
+  constructor(private _router: Router, private userservice : UserdataService) { }
+  
+  ngOnInit(): void {
+    this.userservice.get().subscribe((data)=>{
+      console.log(data)
+    })
 ```
 
 
