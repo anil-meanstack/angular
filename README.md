@@ -295,8 +295,29 @@ export class UserdataService {
 }
  ```
  
+# HTTP CLIENT
 
+***app.module.ts file*** 
+```
+import { HttpClientModule } from '@angular/common/http';
 
+                                                                  =========>>>> call this
+
+imports: [
+    HttpClientModule
+  ],
+ 
+```
+
+***service.ts file*** 
+
+```
+import { HttpClient } from '@angular/common/http';
+                                                           --====>>>> call this
+
+constructor(private http:HttpClient) { }
+
+```
 
 
 
