@@ -281,11 +281,18 @@ onclick(){
 
 ***service.ts file***
 ```
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class UserdataService {
 
   massgealert(){
     return ["anil"]
   }
+  constructor() { }
+}
  ```
  
 
