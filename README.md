@@ -251,6 +251,45 @@ datafunctuion(){
 
 ```
 
+***step 1***
+# service create command
+
+ng g s file name
+
+***step 2***
+
+***service call in component.ts file***
+
+import { UserdataService } from '../userdata.service';
+
+# dependency injection
+
+```
+constructor(private userservice : UserdataService) { }
+
+```
+
+***function*** 
+
+```
+onclick(){
+    const msgService = this.userservice.massgealert()
+     console.log(msgService)
+
+  }
+```
+
+***service.ts file***
+```
+export class UserdataService {
+
+  massgealert(){
+    return ["anil"]
+  }
+ ```
+ 
+
+
 
 
 
