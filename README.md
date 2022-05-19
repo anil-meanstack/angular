@@ -242,7 +242,7 @@ export class FormComponent implements OnInit {
       name: new FormControl('',[Validators.required,Validators.minLength(4)]),,
       lastname: new FormControl('',[Validators.required,Validators.minLength(4)]),,   ====> validators
       email : new FormControl('',[Validators.required,Validators.minLength(4)]),
-      password: new FormControl('',[validators.required,validators.minLength(4)],
+      password: new FormControl('',[validators.required,validators.minLength(8)],
     });
   }
    ===>validators function<===
