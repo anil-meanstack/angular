@@ -209,6 +209,14 @@ export class AppModule { }
    Lastname:<input type="lastname"  formControlName="lastname"/><br><br>
    E-mail: <input type="email"  formControlName="email"/><br><br>
            <button type="submit" name="submit">submit</button>
+           
+  <div>      
+   <label>Password</label>
+    <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">               
+     <div class="text-danger" *ngIf="(input['password'].touched && input['password'].invalid) || Issubmited">
+     <div *ngIf="input['password']?.errors?.['required']">Enter Password</div>
+     <div *ngIf="input['password']?.errors?.['minlength']">Enter minimum 8 char.</div>
+  </div>
 </form>
 
 ```
@@ -234,6 +242,7 @@ export class FormComponent implements OnInit {
       name: new FormControl('',[Validators.required,Validators.minLength(4)]),,
       lastname: new FormControl('',[Validators.required,Validators.minLength(4)]),,   ====> validators
       email : new FormControl('',[Validators.required,Validators.minLength(4)]),
+      password: new FormControl('',[validators.required,validators.minLength(4)],
     });
   }
    ===>validators function<===
