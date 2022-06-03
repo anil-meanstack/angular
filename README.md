@@ -208,7 +208,7 @@ export class AppModule { }
      
    Lastname:<input type="lastname"  formControlName="lastname"/><br><br>
    E-mail: <input type="email"  formControlName="email"/><br><br>
-           <button type="submit" name="submit">submit</button>
+           
            
   <div>      
    <label>Password</label>
@@ -217,6 +217,7 @@ export class AppModule { }
      <div *ngIf="input['password']?.errors?.['required']">Enter Password</div>
      <div *ngIf="input['password']?.errors?.['minlength']">Enter minimum 8 char.</div>
   </div>
+  <button type="submit" name="submit">submit</button>
 </form>
 
 ```
